@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Feet Klaw — Adults Only</title>
+    <meta
+      name="description"
+      content="Feet Klaw is an adults-only fetish community centered on female tickling and foot-focused play. Access is handled via Patreon."
+    />
+
+    <!-- Theme / PWA-ish basics -->
+    <meta name="theme-color" content="#000000" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:title" content="Feet Klaw — Adults Only" />
+    <meta
+      property="og:description"
+      content="Adults-only fetish community focused on female tickling and foot-centered play. Full access via Patreon."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Feet Klaw — Adults Only" />
+    <meta
+      name="twitter:description"
+      content="Adults-only fetish community focused on female tickling and foot-centered play. Full access via Patreon."
+    />
+    <meta name="twitter:image" content="/og-image.png" />
+
+    <!-- Icons -->
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+    <!-- Typography: Headings = Poppins, Body = DM Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Boot loader: visible until React mounts (prevents blank/white screen perception) -->
+    <style>
+      :root {
+        color-scheme: dark;
+      }
+      body {
+        margin: 0;
+        background: #000;
+      }
+      #boot-loader {
+        position: fixed;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        background: radial-gradient(1000px 600px at 20% 15%, rgba(167, 31, 19, 0.28), transparent 60%),
+          radial-gradient(900px 600px at 80% 20%, rgba(200, 164, 93, 0.18), transparent 55%),
+          #000;
+        z-index: 9999;
+      }
+      .boot-inner {
+        width: min(560px, 92vw);
+        padding: 32px;
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(255, 255, 255, 0.04);
+        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.65);
+        backdrop-filter: blur(10px);
+      }
+      .boot-brand {
+        font-family: Poppins, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.86);
+      }
+      .boot-title {
+        margin-top: 10px;
+        font-family: Poppins, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 1.15;
+        color: #fff;
+      }
+      .boot-sub {
+        margin-top: 10px;
+        font-family: "DM Sans", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.68);
+      }
+      .boot-bar {
+        margin-top: 18px;
+        height: 2px;
+        width: 100%;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.12);
+        border-radius: 999px;
+      }
+      .boot-bar > div {
+        height: 100%;
+        width: 40%;
+        background: linear-gradient(90deg, rgba(167, 31, 19, 1), rgba(200, 164, 93, 1));
+        animation: boot-slide 1.1s ease-in-out infinite;
+        border-radius: 999px;
+      }
+      @keyframes boot-slide {
+        0% {
+          transform: translateX(-120%);
+        }
+        100% {
+          transform: translateX(260%);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .boot-bar > div {
+          animation: none;
+          width: 55%;
+        }
+      }
+    </style>
+    <script type="module" crossorigin src="/assets/index-DNO46eoH.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-UEtJcmZZ.css">
+  </head>
+  <body>
+    <div id="boot-loader" aria-hidden="true">
+      <div class="boot-inner">
+        <div class="boot-brand">Feet Klaw</div>
+        <div class="boot-title">Loading…</div>
+        <div class="boot-sub">18+ only. Please wait.</div>
+        <div class="boot-bar"><div></div></div>
+      </div>
+    </div>
+
+    <div id="root"></div>
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- … cabeçalho inalterado … -->
+  </head>
+  <body>
+    <div id="boot-loader" aria-hidden="true">
+      <!-- loader markup -->
+    </div>
+
+    <div id="root"></div>
+
+    <script>
+      // Hide loader as soon as React signals readiness.
+      window.__FK_HIDE_BOOT__ = function () {
+        try {
+          var el = document.getElementById('boot-loader');
+          if (!el) return;
+          el.style.opacity = '0';
+          el.style.transition = 'opacity 180ms ease';
+          setTimeout(function () {
+            el && el.remove();
+          }, 220);
+        } catch (e) {
+          // Non-fatal
+        }
+      };
+    </script>
+    <script>
+      // Failsafe: ensure the boot loader disappears even if React fails to call
+      // window.__FK_HIDE_BOOT__.  After a short timeout (3.5 s), we call the
+      // hide function manually if the loader still exists.
+      setTimeout(function () {
+        try {
+          if (document.getElementById('boot-loader')) {
+            window.__FK_HIDE_BOOT__ && window.__FK_HIDE_BOOT__();
+          }
+        } catch (e) {
+          // Non-fatal
+        }
+      }, 3500);
+    </script>
+  </body>
+</html>

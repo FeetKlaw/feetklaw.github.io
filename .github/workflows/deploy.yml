@@ -15,7 +15,6 @@ jobs:
         with:
           node-version: 18
 
-      # Instala dependências (usa o lockfile detectado)
       - run: |
           if [ -f yarn.lock ]; then
             corepack enable
@@ -32,7 +31,6 @@ jobs:
             npm run build
           fi
 
-      # Publica a pasta dist/ na branch gh-pages
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
