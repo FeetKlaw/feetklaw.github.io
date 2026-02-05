@@ -3,6 +3,8 @@ import { HashRouter, Route, Routes } from 'react-router-dom';
 import Home from '@/pages/Home';
 import About from '@/pages/About';
 import Community from '@/pages/Community';
+import FAQ from '@/pages/FAQ';
+import Support from '@/pages/Support';
 import Terms from '@/pages/Terms';
 import Privacy from '@/pages/Privacy';
 import NotFound from '@/components/NotFound';
@@ -52,6 +54,8 @@ export default function App() {
             <Route path="/" element={<Home theme={theme} />} />
             <Route path="/about" element={<About />} />
             <Route path="/community" element={<Community />} />
+            <Route path="/faq" element={<FAQ />} />
+            <Route path="/support" element={<Support />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="*" element={<NotFound />} />

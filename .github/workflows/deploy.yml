@@ -4,7 +4,6 @@ on:
   push:
     branches: [main]
 
-# GITHUB_TOKEN
 permissions:
   contents: write
 
@@ -13,14 +12,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-
-
-      # Install Node.js
       - uses: actions/setup-node@v3
         with:
           node-version: 18
 
-      - run: |
+      - name: Install dependencies
+        run: |
           if [ -f yarn.lock ]; then
             corepack enable
             yarn install --frozen-lockfile
@@ -28,8 +25,8 @@ jobs:
             npm ci
           fi
 
-      # Compile Vite application
-      - run: |
+      - name: Build
+        run: |
           if [ -f yarn.lock ]; then
             yarn build
           else

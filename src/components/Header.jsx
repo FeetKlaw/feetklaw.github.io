@@ -44,12 +44,11 @@ export default function Header({ theme, onSetTheme }) {
     return 'Dark';
   }, [theme]);
 
-  // Seleciona cor do logotipo: no light, usa a cor de destaque; no dark/dim, mistura com texto primário para contraste.
+  // Logo color adapts to theme
   const brandColor = useMemo(() => {
-    if (theme === 'light') {
-      return 'var(--accent-primary)';
-    }
-    return 'color-mix(in srgb, var(--accent-primary) 80%, var(--text-primary) 20%)';
+    return theme === 'light'
+      ? 'var(--accent-primary)'
+      : 'color-mix(in srgb, var(--accent-primary) 80%, var(--text-primary) 20%)';
   }, [theme]);
 
   const goToHomeAndScroll = (id) => {
@@ -82,8 +81,7 @@ export default function Header({ theme, onSetTheme }) {
                 className="font-semibold uppercase text-xs md:text-sm tracking-[0.16em] md:tracking-[0.18em]"
                 style={{
                   color: brandColor,
-                  fontFamily:
-                    'Poppins, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial',
+                  fontFamily: 'Poppins, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial',
                 }}
                 data-testid="header-brand-text"
               >
@@ -93,8 +91,7 @@ export default function Header({ theme, onSetTheme }) {
                 className="text-xs hidden sm:block"
                 style={{
                   color: 'var(--text-muted)',
-                  fontFamily:
-                    'Poppins, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial',
+                  fontFamily: 'Poppins, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial',
                 }}
                 data-testid="header-brand-line"
               >
@@ -109,34 +106,21 @@ export default function Header({ theme, onSetTheme }) {
             aria-label="Primary"
             data-testid="header-nav"
           >
-            <DesktopNavLink to="/" testId="header-nav-home">
-              Home
-            </DesktopNavLink>
-            <DesktopNavLink to="/about" testId="header-nav-about">
-              About
-            </DesktopNavLink>
-            <DesktopNavLink to="/community" testId="header-nav-community">
-              Community
-            </DesktopNavLink>
+            <DesktopNavLink to="/" testId="header-nav-home">Home</DesktopNavLink>
+            <DesktopNavLink to="/about" testId="header-nav-about">About</DesktopNavLink>
+            <DesktopNavLink to="/community" testId="header-nav-community">Community</DesktopNavLink>
+            <DesktopNavLink to="/faq" testId="header-nav-faq">FAQ</DesktopNavLink>
+            <DesktopNavLink to="/support" testId="header-nav-support">Support</DesktopNavLink>
 
-            <Dropdown
-              label="Access"
-              buttonTestId="access-dropdown-button"
-              menuTestId="access-dropdown-menu"
-              align="left"
-            >
+            <Dropdown label="Access" buttonTestId="access-dropdown-button" menuTestId="access-dropdown-menu" align="left">
               {accessItems.map((it) => (
                 <DropdownItem
                   key={it.key}
-                  onClick={() => {
-                    it.onClick();
-                  }}
+                  onClick={() => it.onClick()}
                   testId={`access-dropdown-item-${it.key}`}
                 >
                   <span>{it.label}</span>
-                  <span aria-hidden="true" style={{ color: 'var(--text-muted)' }}>
-                    →
-                  </span>
+                  <span aria-hidden="true" style={{ color: 'var(--text-muted)' }}>→</span>
                 </DropdownItem>
               ))}
             </Dropdown>
@@ -162,10 +146,7 @@ export default function Header({ theme, onSetTheme }) {
                     testId={`appearance-dropdown-item-${opt.key}`}
                   >
                     <span>{opt.label}</span>
-                    <span
-                      aria-hidden="true"
-                      style={{ color: 'var(--text-muted)' }}
-                    >
+                    <span aria-hidden="true" style={{ color: 'var(--text-muted)' }}>
                       {theme === opt.key ? '✓' : ''}
                     </span>
                   </DropdownItem>
@@ -181,13 +162,7 @@ export default function Header({ theme, onSetTheme }) {
               data-testid="header-join-button"
             >
               Join
-              <span
-                aria-hidden="true"
-                className="text-sm"
-                style={{ color: 'var(--text-muted)' }}
-              >
-                →
-              </span>
+              <span aria-hidden="true" className="text-sm" style={{ color: 'var(--text-muted)' }}>→</span>
             </a>
 
             <button
@@ -203,8 +178,78 @@ export default function Header({ theme, onSetTheme }) {
         </div>
       </div>
 
+      {/* Mobile menu */}
       <MobileMenu isOpen={mobileOpen} onClose={() => setMobileOpen(false)} title="Menu" testId="mobile-menu">
-        {/* menu items… */}
+        <Link to="/" className="fk-button w-full" onClick={() => setMobileOpen(false)} data-testid="mobile-menu-home">
+          Home
+        </Link>
+        <Link to="/about" className="fk-button w-full" onClick={() => setMobileOpen(false)} data-testid="mobile-menu-about">
+          About
+        </Link>
+        <Link to="/community" className="fk-button w-full" onClick={() => setMobileOpen(false)}>Community</Link>
+        <Link to="/faq" className="fk-button w-full" onClick={() => setMobileOpen(false)}>FAQ</Link>
+        <Link to="/support" className="fk-button w-full" onClick={() => setMobileOpen(false)}>Support</Link>
+
+        <div className="fk-divider opacity-70" aria-hidden="true" />
+
+        <div className="text-xs tracking-[0.28em] uppercase" style={{ color: 'var(--text-muted)' }}>
+          Access
+        </div>
+        {accessItems.map((it) => (
+          <button
+            key={it.key}
+            type="button"
+            className="fk-button w-full justify-between"
+            onClick={() => {
+              setMobileOpen(false);
+              it.onClick();
+            }}
+            data-testid={`mobile-menu-access-${it.key}`}
+          >
+            <span>{it.label}</span>
+            <span aria-hidden="true" style={{ color: 'var(--text-muted)' }}>→</span>
+          </button>
+        ))}
+
+        <div className="fk-divider opacity-70" aria-hidden="true" />
+
+        <div className="text-xs tracking-[0.28em] uppercase" style={{ color: 'var(--text-muted)' }}>
+          Theme
+        </div>
+        <div className="text-xs" style={{ color: 'var(--text-muted)' }} data-testid="mobile-menu-appearance-microtext">
+          Preference is saved on this device.
+        </div>
+        {[
+          { key: 'dark', label: 'Dark' },
+          { key: 'dim', label: 'Dim' },
+          { key: 'light', label: 'Light' },
+        ].map((opt) => (
+          <button
+            key={opt.key}
+            type="button"
+            className="fk-button w-full justify-between"
+            onClick={() => onSetTheme(opt.key)}
+            data-testid={`mobile-menu-appearance-${opt.key}`}
+          >
+            <span>{opt.label}</span>
+            <span aria-hidden="true" style={{ color: 'var(--text-muted)' }}>
+              {theme === opt.key ? '✓' : ''}
+            </span>
+          </button>
+        ))}
+
+        <div className="fk-divider opacity-70" aria-hidden="true" />
+
+        <a
+          href={SITE.links.patreonJoin}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="fk-button fk-button-primary w-full"
+          data-testid="mobile-menu-join"
+          onClick={() => setMobileOpen(false)}
+        >
+          Join on Patreon →
+        </a>
       </MobileMenu>
     </header>
   );
