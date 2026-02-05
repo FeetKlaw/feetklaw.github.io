@@ -1,0 +1,119 @@
+/* Theme-safe semantic design tokens */
+
+:root {
+  /* Spacing (8px-based) */
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+
+  /* Radii */
+  --radius-card: 18px;
+  --radius-card-lg: 22px;
+  --radius-pill: 999px;
+
+  /* Brand accents */
+  --accent-primary: #a71f13;
+  --accent-soft: rgba(167, 31, 19, 0.16);
+  --metal: rgba(200, 164, 93, 0.75);
+  --metal-soft: rgba(200, 164, 93, 0.18);
+
+  /* Type scale: clamp-based (controlled) */
+  --text-body: clamp(0.875rem, 0.2vw + 0.84rem, 1.0625rem); /* 14px -> 17px */
+  --text-small: clamp(0.8125rem, 0.12vw + 0.78rem, 0.9375rem); /* 13px -> 15px */
+  --text-micro: 0.75rem; /* 12px */
+
+  --h1: clamp(2.1rem, 2.4vw + 1.5rem, 3.25rem);
+  --h2: clamp(1.6rem, 1.6vw + 1.2rem, 2.1rem);
+  --h3: clamp(1.15rem, 0.5vw + 1.0rem, 1.35rem);
+
+  /* Motion */
+  --motion-fast: 180ms;
+  --motion-med: 240ms;
+  --motion-slow: 360ms;
+
+
+  /* Overlays */
+  --overlay-opacity: 1;
+
+}
+
+/* Dark (default) */
+:root,
+html[data-theme='dark'] {
+  color-scheme: dark;
+
+  --bg: #000000;
+  --surface-1: rgba(255, 255, 255, 0.035);
+  --surface-2: rgba(255, 255, 255, 0.055);
+  --surface-3: rgba(255, 255, 255, 0.075);
+
+  --text-primary: rgba(255, 255, 255, 0.92);
+  --text-secondary: rgba(255, 255, 255, 0.72);
+  --text-muted: rgba(255, 255, 255, 0.55);
+
+  --border: rgba(255, 255, 255, 0.12);
+  --border-strong: rgba(255, 255, 255, 0.18);
+
+  --overlay-opacity: 1;
+
+
+  --shadow: 0 12px 50px rgba(0, 0, 0, 0.55);
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.42);
+
+  --ring: rgba(200, 164, 93, 0.75);
+}
+
+/* Dim */
+html[data-theme='dim'] {
+  color-scheme: dark;
+
+  --bg: #070707;
+  --surface-1: rgba(255, 255, 255, 0.03);
+  --surface-2: rgba(255, 255, 255, 0.045);
+  --surface-3: rgba(255, 255, 255, 0.06);
+
+  --text-primary: rgba(255, 255, 255, 0.88);
+  --text-secondary: rgba(255, 255, 255, 0.68);
+  --text-muted: rgba(255, 255, 255, 0.52);
+
+  --overlay-opacity: 1;
+
+
+  --border: rgba(255, 255, 255, 0.11);
+  --border-strong: rgba(255, 255, 255, 0.16);
+
+  --shadow: 0 10px 44px rgba(0, 0, 0, 0.48);
+  --shadow-soft: 0 8px 26px rgba(0, 0, 0, 0.36);
+
+  --ring: rgba(200, 164, 93, 0.70);
+}
+
+/* Light */
+html[data-theme='light'] {
+  color-scheme: light;
+
+  --bg: #fbfbfb;
+  --surface-1: rgba(0, 0, 0, 0.02);
+  --surface-2: rgba(0, 0, 0, 0.035);
+  --surface-3: rgba(0, 0, 0, 0.05);
+
+  --text-primary: rgba(0, 0, 0, 0.88);
+  --text-secondary: rgba(0, 0, 0, 0.64);
+
+  --overlay-opacity: 0.78;
+
+  --text-muted: rgba(0, 0, 0, 0.48);
+
+  --border: rgba(0, 0, 0, 0.10);
+  --border-strong: rgba(0, 0, 0, 0.14);
+
+  --shadow: 0 12px 46px rgba(0, 0, 0, 0.12);
+  --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.08);
+
+  --ring: rgba(167, 31, 19, 0.55);
+  --metal: rgba(167, 31, 19, 0.65); /* keep gold subtle; lean warmer in light */
+  --metal-soft: rgba(167, 31, 19, 0.16);
+}
