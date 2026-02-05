@@ -28,7 +28,7 @@ export default function Support() {
                   Email Support
                 </h2>
                 <p className="mt-2 text-sm" style={{ color: 'var(--text-secondary)' }}>
-                  For billing questions, technical issues or feedback, send us an email at
+                  For billing questions, technical issues or feedback, send us an email at 
                   <a href="mailto:feetklaw@gmail.com" style={{ color: 'var(--accent-primary)' }}>
                     feetklaw@gmail.com
                   </a>. We aim to respond within 24–48 hours.
