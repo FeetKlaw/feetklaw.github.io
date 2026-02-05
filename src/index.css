@@ -1,9 +1,11 @@
 @import "./styles/tokens.css";
 
+/* Disable unknown at-rule warnings from Stylelint for Tailwind directives */
+ /* stylelint-disable at-rule-no-unknown */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+/* stylelint-enable at-rule-no-unknown */
 
 @layer base {
   html {
@@ -65,23 +67,22 @@
   }
 }
 
-
 @layer components {
-.fk-section {
+  .fk-section {
     padding-top: clamp(40px, 6vw, 64px);
   }
 
-.fk-section-tight {
+  .fk-section-tight {
     padding-top: clamp(28px, 4vw, 48px);
   }
 
-.fk-surface-1 {
+  .fk-surface-1 {
     background: var(--surface-1);
     border: 1px solid var(--border);
     border-radius: var(--radius-card);
   }
 
-.fk-container {
+  .fk-container {
     /* 1120–1200px target with fluid padding */
     max-width: 1200px;
     margin-left: auto;
@@ -91,46 +92,46 @@
     padding-right: clamp(16px, 3vw, 32px);
   }
 
-.fk-bg {
+  .fk-bg {
     background: radial-gradient(900px 600px at 15% 10%, rgba(167, 31, 19, 0.18), transparent 60%),
       radial-gradient(850px 560px at 80% 15%, rgba(200, 164, 93, 0.10), transparent 60%),
       radial-gradient(900px 560px at 70% 85%, rgba(255, 255, 255, 0.03), transparent 55%),
       var(--bg);
   }
 
-.fk-card {
+  .fk-card {
     border-radius: var(--radius-card);
     border: 1px solid var(--border);
     background: var(--surface-1);
     box-shadow: none;
     backdrop-filter: blur(10px);
     transition: transform var(--motion-fast) ease, border-color var(--motion-fast) ease;
-}
+  }
 
-.fk-text-primary { color: var(--text-primary); }
-.fk-text-secondary { color: var(--text-secondary); }
-.fk-text-muted { color: var(--text-muted); }
+  .fk-text-primary { color: var(--text-primary); }
+  .fk-text-secondary { color: var(--text-secondary); }
+  .fk-text-muted { color: var(--text-muted); }
 
-.fk-kicker {
+  .fk-kicker {
     font-size: 11px;
     letter-spacing: 0.32em;
     text-transform: uppercase;
     color: var(--text-muted);
   }
 
-.fk-micro {
+  .fk-micro {
     font-size: var(--text-small);
     color: var(--text-muted);
   }
 
-.fk-price {
+  .fk-price {
     font-size: clamp(1.5rem, 0.8vw + 1.2rem, 1.95rem);
     line-height: 1.1;
     font-weight: 700;
     color: var(--metal);
   }
 
-.fk-badge {
+  .fk-badge {
     font-size: 11px;
     letter-spacing: 0.22em;
     text-transform: uppercase;
@@ -153,7 +154,7 @@
     }
   }
 
-.fk-button {
+  .fk-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -165,8 +166,7 @@
     border: 1px solid var(--border);
     background: var(--surface-2);
     color: var(--text-primary);
-    transition: transform var(--motion-fast) ease, background var(--motion-fast) ease,
-      border-color var(--motion-fast) ease;
+    transition: transform var(--motion-fast) ease, background var(--motion-fast) ease, border-color var(--motion-fast) ease;
     user-select: none;
   }
   .fk-button:hover {
@@ -183,55 +183,33 @@
     pointer-events: none;
   }
 
-.fk-button-primary {
-  position: relative;
-  border-color: var(--metal-soft);
-  background: linear-gradient(
-    135deg,
-    color-mix(in srgb, var(--accent-primary) 92%, transparent),
-    color-mix(in srgb, var(--accent-primary) 70%, transparent)
-  );
-}
-
-.fk-button-primary:hover {
-  border-color: color-mix(in srgb, var(--metal) 24%, var(--border));
-}
-
-.fk-button-primary::after {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  border-radius: var(--radius-pill);
-  padding: 1px;
-
-  background: linear-gradient(
-    90deg,
-    color-mix(in srgb, var(--metal) 78%, transparent),
-    color-mix(in srgb, var(--text-primary) 8%, transparent)
-  );
-
-  -webkit-mask: linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  mask: linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-
-  opacity: 0.38;
-  pointer-events: none;
-}
+  .fk-button-primary {
+    position: relative;
+    border-color: var(--metal-soft);
+    background: linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--accent-primary) 92%, transparent),
+      color-mix(in srgb, var(--accent-primary) 70%, transparent)
+    );
+  }
 
   .fk-button-primary:hover {
     border-color: color-mix(in srgb, var(--metal) 24%, var(--border));
   }
+
   .fk-button-primary::after {
     content: '';
     position: absolute;
     inset: -1px;
     border-radius: var(--radius-pill);
     padding: 1px;
-    background: linear-gradient(90deg, color-mix(in srgb, var(--metal) 78%, transparent), color-mix(in srgb, var(--text-primary) 8%, transparent));
+    background: linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--metal) 78%, transparent),
+      color-mix(in srgb, var(--text-primary) 8%, transparent)
+    );
+    /* adiciona propriedade padrão mask para compatibilidade */
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
     -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
@@ -239,19 +217,19 @@
     pointer-events: none;
   }
 
-.fk-divider {
+  .fk-divider {
     height: 1px;
     width: 100%;
     background: linear-gradient(90deg, transparent, var(--border), transparent);
-}
+  }
 
   /* Navigation */
-.fk-header {
+  .fk-header {
     background: color-mix(in srgb, var(--bg) 72%, transparent);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--metal-soft);
   }
-.fk-header-inner {
+  .fk-header-inner {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
@@ -259,7 +237,7 @@
     padding-top: 14px;
     padding-bottom: 14px;
   }
-.fk-nav-link {
+  .fk-nav-link {
     font-size: 13px;
     letter-spacing: 0.18em;
     text-transform: uppercase;
@@ -279,7 +257,7 @@
     border-color: var(--border-strong);
     color: var(--text-primary);
   }
-.fk-nav-button {
+  .fk-nav-button {
     display: inline-flex;
     align-items: center;
     gap: 10px;
@@ -299,12 +277,11 @@
   }
 
   /* Deluxe CTA pulse (tasteful) */
-.fk-deluxe-pulse {
+  .fk-deluxe-pulse {
     animation: fkPulse 2.6s ease-in-out infinite;
   }
   @keyframes fkPulse {
-    0%,
-    100% {
+    0%, 100% {
       box-shadow: 0 0 0 0 rgba(167, 31, 19, 0);
     }
     50% {
@@ -318,19 +295,19 @@
   }
 
   /* Image cards */
-.fk-image-card {
+  .fk-image-card {
     border-radius: 18px;
     overflow: hidden;
   }
 
-.fk-menu-panel {
+  .fk-menu-panel {
     border-radius: 16px;
     border: 1px solid var(--border);
     background: color-mix(in srgb, var(--bg) 72%, transparent);
     box-shadow: var(--shadow-soft);
     backdrop-filter: blur(10px);
   }
-.fk-menu-item {
+  .fk-menu-item {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -350,7 +327,7 @@
     border-color: var(--metal-soft);
   }
 
-.fk-mobile-panel {
+  .fk-mobile-panel {
     position: absolute;
     left: 50%;
     top: 12px;
@@ -365,14 +342,14 @@
     box-shadow: var(--shadow);
     backdrop-filter: blur(12px);
   }
-.fk-mobile-panel-top {
+  .fk-mobile-panel-top {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 12px;
   }
 
-.fk-sticky-join {
+  .fk-sticky-join {
     position: fixed;
     right: 18px;
     bottom: 18px;
@@ -383,7 +360,11 @@
     font-weight: 700;
     letter-spacing: 0.04em;
     color: var(--text-primary);
-    background: linear-gradient(135deg, color-mix(in srgb, var(--accent-primary) 92%, transparent), color-mix(in srgb, var(--accent-primary) 72%, transparent));
+    background: linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--accent-primary) 92%, transparent),
+      color-mix(in srgb, var(--accent-primary) 72%, transparent)
+    );
     border: 1px solid var(--metal-soft);
     box-shadow: var(--shadow-soft);
     transition: transform var(--motion-fast) ease, border-color var(--motion-fast) ease;
@@ -391,6 +372,30 @@
   .fk-sticky-join:hover {
     transform: translateY(-1px);
     border-color: color-mix(in srgb, var(--metal) 20%, var(--border));
+  }
+
+  /* Custom price colours and badge colours for membership tiers. */
+  .fk-card .fk-price {
+    color: var(--text-primary);
+  }
+  .fk-card.popular .fk-price {
+    /* lighten the red a bit for better legibility */
+    color: color-mix(in srgb, var(--accent-primary) 80%, var(--text-primary) 20%);
+  }
+  .fk-card.legacy .fk-price {
+    /* soft grey for the legacy tier */
+    color: var(--text-secondary);
+  }
+
+  .fk-card.popular .fk-badge {
+    color: color-mix(in srgb, var(--accent-primary) 90%, var(--text-primary) 10%);
+    border-color: color-mix(in srgb, var(--accent-primary) 70%, var(--border) 30%);
+    background: color-mix(in srgb, var(--accent-primary) 30%, transparent);
+  }
+  .fk-card.legacy .fk-badge {
+    color: var(--text-secondary);
+    border-color: var(--text-secondary);
+    background: color-mix(in srgb, var(--text-secondary) 30%, transparent);
   }
 }
 

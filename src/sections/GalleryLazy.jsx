@@ -72,14 +72,14 @@ function PreviewCard({ item, index, onOpen }) {
               borderRadius: '999px',
               border: '1px solid var(--border)',
               background: 'color-mix(in srgb, var(--bg) 68%, transparent)',
-              color: 'var(--text-secondary)',
+              color: 'var(--text-primary)',
               backdropFilter: 'blur(10px)',
             }}
             data-testid={`gallery-preview-badge-${item.key}`}
           >
             Preview
           </div>
-          <div className="text-xs" style={{ color: 'var(--text-muted)' }} data-testid={`gallery-card-index-${item.key}`}>
+          <div className="text-xs" style={{ color: 'var(--text-primary)' }} data-testid={`gallery-card-index-${item.key}`}>
             {String(index + 1).padStart(2, '0')}
           </div>
         </div>

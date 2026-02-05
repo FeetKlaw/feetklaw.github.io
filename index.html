@@ -137,6 +137,18 @@
 
     <div id="root"></div>
 
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- … cabeçalho inalterado … -->
+  </head>
+  <body>
+    <div id="boot-loader" aria-hidden="true">
+      <!-- loader markup -->
+    </div>
+
+    <div id="root"></div>
+
     <script>
       // Hide loader as soon as React signals readiness.
       window.__FK_HIDE_BOOT__ = function () {
@@ -152,6 +164,20 @@
           // Non-fatal
         }
       };
+    </script>
+    <script>
+      // Failsafe: ensure the boot loader disappears even if React fails to call
+      // window.__FK_HIDE_BOOT__.  After a short timeout (3.5 s), we call the
+      // hide function manually if the loader still exists.
+      setTimeout(function () {
+        try {
+          if (document.getElementById('boot-loader')) {
+            window.__FK_HIDE_BOOT__ && window.__FK_HIDE_BOOT__();
+          }
+        } catch (e) {
+          // Non-fatal
+        }
+      }, 3500);
     </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>

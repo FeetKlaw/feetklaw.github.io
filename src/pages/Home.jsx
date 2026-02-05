@@ -1,4 +1,9 @@
-import React, { Suspense, useMemo, useState } from 'react';
+import React, {
+  Suspense,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react';
 import AgeGate from '@/components/AgeGate';
 import ScrollProgress from '@/components/ScrollProgress';
 import StickyJoinButton from '@/components/StickyJoinButton';
@@ -17,40 +22,90 @@ const PreviewModalLazy = React.lazy(() => import('@/sections/PreviewModalLazy'))
 export default function Home({ theme }) {
   const reducedMotion = usePrefersReducedMotion();
 
-  const [isVerified, setIsVerified] = useState(() => safeLocalStorageGet('fk_verified') === 'true');
-  const [isPreviewOpen, setIsPreviewOpen] = useState(false);
+  // Verificação de idade com expiração de 1 ano
+  const [isVerified, setIsVerified] = useState(() => {
+    const verified = safeLocalStorageGet('fk_verified') === 'true';
+    const tsRaw = safeLocalStorageGet('fk_verified_ts');
+    const ts = tsRaw ? parseInt(tsRaw, 10) : 0;
+    const maxAgeMs = 1000 * 60 * 60 * 24 * 365; // 1 ano
+    if (verified && ts && Date.now() - ts < maxAgeMs) {
+      return true;
+    }
+    return false;
+  });
 
+  // Controla abertura forçada do AgeGate após timeout
+  const [forceAgeGateOpen, setForceAgeGateOpen] = useState(false);
+
+  const [isPreviewOpen, setIsPreviewOpen] = useState(false);
   const openPreview = () => setIsPreviewOpen(true);
   const closePreview = () => setIsPreviewOpen(false);
 
   const acceptAgeGate = () => {
+    // Persistir verificação e timestamp
     safeLocalStorageSet('fk_verified', 'true');
+    safeLocalStorageSet('fk_verified_ts', String(Date.now()));
     setIsVerified(true);
+    setForceAgeGateOpen(false);
   };
 
+  // Se não verificado, inicia timer de 15 s para forçar AgeGate
+  useEffect(() => {
+    if (!isVerified) {
+      const timer = setTimeout(() => {
+        setForceAgeGateOpen(true);
+      }, 15000);
+      return () => clearTimeout(timer);
+    }
+  }, [isVerified]);
+
   const backgroundClass = useMemo(() => {
-    // Light theme supported, but dark is default.
+    // Tema claro suportado; escuro é padrão
     return theme === 'light' ? '' : 'fk-bg';
   }, [theme]);
 
   return (
-    <main className={backgroundClass} id="main-content" data-testid="home-page">
-      <a href="#main-content" className="fk-skip-link" data-testid="skip-to-content-link-home">
+    <main
+      className={backgroundClass}
+      id="main-content"
+      data-testid="home-page"
+    >
+      <a
+        href="#main-content"
+        className="fk-skip-link"
+        data-testid="skip-to-content-link-home"
+      >
         Skip to content
       </a>
 
       <ScrollProgress />
 
-      <AgeGate isOpen={!isVerified} onAccept={acceptAgeGate} />
+      {/* AgeGate abre se ainda não verificado ou se timer disparar */}
+      <AgeGate
+        isOpen={!isVerified || forceAgeGateOpen}
+        onAccept={acceptAgeGate}
+      />
 
-      <div className={isVerified ? '' : 'pointer-events-none select-none blur-[2px] opacity-60'}>
+      {/* Blur temporário da página até confirmar idade */}
+      <div
+        className={
+          isVerified
+            ? ''
+            : 'pointer-events-none select-none blur-[2px] opacity-60'
+        }
+      >
         <Hero onOpenPreview={openPreview} />
 
         <Suspense
           fallback={
-            <div className="fk-container pt-16" data-testid="gallery-loading-fallback">
+            <div
+              className="fk-container pt-16"
+              data-testid="gallery-loading-fallback"
+            >
               <div className="fk-card p-6">
-                <div className="fk-text-secondary">Loading preview grid…</div>
+                <div className="fk-text-secondary">
+                  Loading preview grid…
+                </div>
               </div>
             </div>
           }
@@ -62,10 +117,16 @@ export default function Home({ theme }) {
         <TrustStrip />
         <FinalCTA />
 
-        <section className="pb-8" data-testid="home-external-links-section">
+        <section
+          className="pb-8"
+          data-testid="home-external-links-section"
+        >
           <div className="fk-container">
             <div className="fk-card p-6 md:p-8">
-              <div className="fk-kicker" data-testid="home-links-kicker">
+              <div
+                className="fk-kicker"
+                data-testid="home-links-kicker"
+              >
                 Quick links
               </div>
               <div className="mt-3 flex flex-wrap gap-2">
@@ -107,7 +168,11 @@ export default function Home({ theme }) {
                 </a>
               </div>
 
-              <div className="mt-4 text-xs" style={{ color: 'var(--text-muted)' }} data-testid="home-links-microcopy">
+              <div
+                className="mt-4 text-xs"
+                style={{ color: 'var(--text-muted)' }}
+                data-testid="home-links-microcopy"
+              >
                 This site does not collect payment data. Access is handled by Patreon.
               </div>
             </div>
@@ -118,7 +183,10 @@ export default function Home({ theme }) {
       </div>
 
       <Suspense fallback={null}>
-        <PreviewModalLazy isOpen={isPreviewOpen} onClose={closePreview} />
+        <PreviewModalLazy
+          isOpen={isPreviewOpen}
+          onClose={closePreview}
+        />
       </Suspense>
 
       <StickyJoinButton />

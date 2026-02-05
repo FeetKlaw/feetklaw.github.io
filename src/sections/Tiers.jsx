@@ -55,9 +55,7 @@ const TIERS = [
 function Perk({ children }) {
   return (
     <li className="flex gap-2" data-testid="tier-perk-item">
-      <span aria-hidden="true" style={{ color: 'var(--metal)' }}>
-        ✓
-      </span>
+      <span aria-hidden="true" style={{ color: 'var(--metal)' }}>✓</span>
       <span>{children}</span>
     </li>
   );
@@ -71,9 +69,7 @@ export default function Tiers() {
     <section className="pt-16" aria-label="Membership tiers" data-testid="tiers-section">
       <div className="fk-container" id="membership">
         <motion.div {...reveal}>
-          <div className="fk-kicker" data-testid="tiers-kicker">
-            Membership
-          </div>
+          <div className="fk-kicker" data-testid="tiers-kicker">Membership</div>
           <h2 className="mt-3 text-3xl md:text-4xl font-semibold" data-testid="tiers-title">
             Choose how deep you want to go
           </h2>
@@ -85,62 +81,82 @@ export default function Tiers() {
         <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4 justify-items-center" data-testid="tiers-grid">
           {TIERS.map((tier) => {
             const isFeatured = tier.key === 'deluxe';
+            const cardClass =
+              tier.key === 'deluxe' ? 'popular' :
+              tier.key === 'legacy' ? 'legacy' : '';
 
             return (
               <div
                 key={tier.key}
-                className="fk-card p-6 md:p-7 relative flex flex-col w-full"
+                className={`fk-card p-6 md:p-7 relative flex flex-col w-full ${cardClass}`}
                 style={{
                   maxWidth: 420,
                   borderColor: isFeatured ? 'var(--metal-soft)' : 'var(--border)',
                 }}
                 data-testid={`tier-card-${tier.key}`}
               >
+                {/* Badge */}
+                {tier.badge ? (
+                  <span className="fk-badge absolute top-2 right-2" data-testid={`tier-badge-${tier.key}`}>
+                    {tier.badge}
+                  </span>
+                ) : null}
+
+                {/* Top section: name & description + price/cadence */}
                 <div className="flex items-start justify-between gap-4" data-testid={`tier-top-${tier.key}`}>
                   <div className="min-w-0">
                     <div className="flex items-center gap-2 flex-wrap" data-testid={`tier-namewrap-${tier.key}`}>
-                      <div className="font-semibold" style={{ color: 'var(--text-primary)' }} data-testid={`tier-name-${tier.key}`}>
+                      <div
+                        className="font-semibold"
+                        style={{ color: 'var(--text-primary)' }}
+                        data-testid={`tier-name-${tier.key}`}
+                      >
                         {tier.name}
                       </div>
-                      {tier.badge ? (
-                        <span
-                          className="text-[11px] tracking-[0.22em] uppercase"
-                          style={{
-                            color: 'var(--text-primary)',
-                            background: 'color-mix(in srgb, var(--bg) 70%, transparent)',
-                            padding: '6px 10px',
-                            borderRadius: 'var(--radius-pill)',
-                            border: '1px solid var(--metal-soft)',
-                            lineHeight: 1,
-                          }}
-                          data-testid={`tier-badge-${tier.key}`}
-                        >
-                          {tier.badge}
-                        </span>
-                      ) : null}
                     </div>
-                    <div className="mt-1 text-sm" style={{ color: 'var(--text-secondary)' }} data-testid={`tier-description-${tier.key}`}>
+                    <div
+                      className="mt-1 text-sm"
+                      style={{ color: 'var(--text-secondary)' }}
+                      data-testid={`tier-description-${tier.key}`}
+                    >
                       {tier.description}
                     </div>
                   </div>
-                  <div className="text-right shrink-0" style={{ minWidth: 120 }} data-testid={`tier-price-wrap-${tier.key}`}>
+
+                  {/* Ajuste de margem superior no preço para evitar sobreposição */}
+                  <div
+                    className="text-right shrink-0 mt-4"
+                    style={{ minWidth: 120 }}
+                    data-testid={`tier-price-wrap-${tier.key}`}
+                  >
                     <div className="fk-price" data-testid={`tier-price-${tier.key}`}>
                       {tier.price}
                     </div>
-                    <div className="text-sm" style={{ color: 'var(--text-muted)' }} data-testid={`tier-cadence-${tier.key}`}>
+                    <div
+                      className="text-sm"
+                      style={{ color: 'var(--text-muted)' }}
+                      data-testid={`tier-cadence-${tier.key}`}
+                    >
                       {tier.cadence}
                     </div>
                   </div>
                 </div>
 
-                <ul className="mt-5 space-y-2 text-sm" style={{ color: 'var(--text-secondary)' }} data-testid={`tier-perks-${tier.key}`}>
+                {/* Perks */}
+                <ul
+                  className="mt-5 space-y-2 text-sm"
+                  style={{ color: 'var(--text-secondary)' }}
+                  data-testid={`tier-perks-${tier.key}`}
+                >
                   {tier.perks.map((p) => (
                     <Perk key={p}>{p}</Perk>
                   ))}
                 </ul>
 
+                {/* Spacer for consistent height */}
                 <div className="mt-6" />
 
+                {/* CTA */}
                 <a
                   className={`fk-button ${isFeatured ? 'fk-button-primary fk-deluxe-pulse' : ''} mt-auto w-full`}
                   href={SITE.links.patreonJoin}
@@ -151,10 +167,16 @@ export default function Tiers() {
                   Join on Patreon
                 </a>
 
-                <div className="mt-3 text-xs" style={{ color: 'var(--text-muted)' }} data-testid={`tier-microcopy-${tier.key}`}>
+                {/* Microcopy */}
+                <div
+                  className="mt-3 text-xs"
+                  style={{ color: 'var(--text-muted)' }}
+                  data-testid={`tier-microcopy-${tier.key}`}
+                >
                   {tier.micro}
                 </div>
 
+                {/* Deluxe overlay effect */}
                 {!reduced && isFeatured ? (
                   <div
                     aria-hidden="true"
@@ -169,8 +191,6 @@ export default function Tiers() {
               </div>
             );
           })}
-
-          {/* spacer removed for equal 3-col layout */}
         </div>
 
         <div className="mt-10 fk-divider" aria-hidden="true" />

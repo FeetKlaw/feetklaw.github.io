@@ -44,6 +44,14 @@ export default function Header({ theme, onSetTheme }) {
     return 'Dark';
   }, [theme]);
 
+  // Seleciona cor do logotipo: no light, usa a cor de destaque; no dark/dim, mistura com texto primário para contraste.
+  const brandColor = useMemo(() => {
+    if (theme === 'light') {
+      return 'var(--accent-primary)';
+    }
+    return 'color-mix(in srgb, var(--accent-primary) 80%, var(--text-primary) 20%)';
+  }, [theme]);
+
   const goToHomeAndScroll = (id) => {
     navigate('/');
     setTimeout(() => {
@@ -63,19 +71,31 @@ export default function Header({ theme, onSetTheme }) {
       <div className="fk-container">
         <div className="fk-header-inner">
           {/* Left: Brand */}
-          <Link to="/" className="flex items-center gap-3 no-underline" data-testid="header-brand-link">
+          <Link
+            to="/"
+            className="flex items-center gap-2 md:gap-3 no-underline"
+            data-testid="header-brand-link"
+          >
             <BrandMark />
             <div>
               <div
-                className="text-sm font-semibold tracking-[0.18em] uppercase"
-                style={{ color: 'var(--text-primary)' }}
+                className="font-semibold uppercase text-xs md:text-sm tracking-[0.16em] md:tracking-[0.18em]"
+                style={{
+                  color: brandColor,
+                  fontFamily:
+                    'Poppins, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial',
+                }}
                 data-testid="header-brand-text"
               >
                 {SITE.brand}
               </div>
               <div
-                className="text-xs"
-                style={{ color: 'var(--text-muted)' }}
+                className="text-xs hidden sm:block"
+                style={{
+                  color: 'var(--text-muted)',
+                  fontFamily:
+                    'Poppins, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial',
+                }}
                 data-testid="header-brand-line"
               >
                 {SITE.brandLine}
@@ -84,10 +104,20 @@ export default function Header({ theme, onSetTheme }) {
           </Link>
 
           {/* Center: Desktop nav */}
-          <nav className="hidden md:flex items-center justify-center gap-2" aria-label="Primary" data-testid="header-nav">
-            <DesktopNavLink to="/" testId="header-nav-home">Home</DesktopNavLink>
-            <DesktopNavLink to="/about" testId="header-nav-about">About</DesktopNavLink>
-            <DesktopNavLink to="/community" testId="header-nav-community">Community</DesktopNavLink>
+          <nav
+            className="hidden md:flex items-center justify-center gap-2"
+            aria-label="Primary"
+            data-testid="header-nav"
+          >
+            <DesktopNavLink to="/" testId="header-nav-home">
+              Home
+            </DesktopNavLink>
+            <DesktopNavLink to="/about" testId="header-nav-about">
+              About
+            </DesktopNavLink>
+            <DesktopNavLink to="/community" testId="header-nav-community">
+              Community
+            </DesktopNavLink>
 
             <Dropdown
               label="Access"
@@ -116,7 +146,7 @@ export default function Header({ theme, onSetTheme }) {
           <div className="flex items-center justify-end gap-2" data-testid="header-actions">
             <div className="hidden md:block">
               <Dropdown
-                label={`Appearance: ${appearanceLabel}`}
+                label={`Theme: ${appearanceLabel}`}
                 buttonTestId="appearance-dropdown-button"
                 menuTestId="appearance-dropdown-menu"
                 microText="Preference is saved on this device."
@@ -132,7 +162,10 @@ export default function Header({ theme, onSetTheme }) {
                     testId={`appearance-dropdown-item-${opt.key}`}
                   >
                     <span>{opt.label}</span>
-                    <span aria-hidden="true" style={{ color: 'var(--text-muted)' }}>
+                    <span
+                      aria-hidden="true"
+                      style={{ color: 'var(--text-muted)' }}
+                    >
                       {theme === opt.key ? '✓' : ''}
                     </span>
                   </DropdownItem>
@@ -148,7 +181,11 @@ export default function Header({ theme, onSetTheme }) {
               data-testid="header-join-button"
             >
               Join
-              <span aria-hidden="true" className="text-sm" style={{ color: 'var(--text-muted)' }}>
+              <span
+                aria-hidden="true"
+                className="text-sm"
+                style={{ color: 'var(--text-muted)' }}
+              >
                 →
               </span>
             </a>
@@ -167,83 +204,7 @@ export default function Header({ theme, onSetTheme }) {
       </div>
 
       <MobileMenu isOpen={mobileOpen} onClose={() => setMobileOpen(false)} title="Menu" testId="mobile-menu">
-        <Link to="/" className="fk-button w-full" onClick={() => setMobileOpen(false)} data-testid="mobile-menu-home">
-          Home
-        </Link>
-        <Link to="/about" className="fk-button w-full" onClick={() => setMobileOpen(false)} data-testid="mobile-menu-about">
-          About
-        </Link>
-        <Link
-          to="/community"
-          className="fk-button w-full"
-          onClick={() => setMobileOpen(false)}
-          data-testid="mobile-menu-community"
-        >
-          Community
-        </Link>
-
-        <div className="fk-divider opacity-70" aria-hidden="true" />
-
-        <div className="text-xs tracking-[0.28em] uppercase" style={{ color: 'var(--text-muted)' }}>
-          Access
-        </div>
-        {accessItems.map((it) => (
-          <button
-            key={it.key}
-            type="button"
-            className="fk-button w-full justify-between"
-            onClick={() => {
-              setMobileOpen(false);
-              it.onClick();
-            }}
-            data-testid={`mobile-menu-access-${it.key}`}
-          >
-            <span>{it.label}</span>
-            <span aria-hidden="true" style={{ color: 'var(--text-muted)' }}>
-              →
-            </span>
-          </button>
-        ))}
-
-        <div className="fk-divider opacity-70" aria-hidden="true" />
-
-        <div className="text-xs tracking-[0.28em] uppercase" style={{ color: 'var(--text-muted)' }}>
-          Appearance
-        </div>
-        <div className="text-xs" style={{ color: 'var(--text-muted)' }} data-testid="mobile-menu-appearance-microtext">
-          Preference is saved on this device.
-        </div>
-        {[
-          { key: 'dark', label: 'Dark' },
-          { key: 'dim', label: 'Dim' },
-          { key: 'light', label: 'Light' },
-        ].map((opt) => (
-          <button
-            key={opt.key}
-            type="button"
-            className="fk-button w-full justify-between"
-            onClick={() => onSetTheme(opt.key)}
-            data-testid={`mobile-menu-appearance-${opt.key}`}
-          >
-            <span>{opt.label}</span>
-            <span aria-hidden="true" style={{ color: 'var(--text-muted)' }}>
-              {theme === opt.key ? '✓' : ''}
-            </span>
-          </button>
-        ))}
-
-        <div className="fk-divider opacity-70" aria-hidden="true" />
-
-        <a
-          href={SITE.links.patreonJoin}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="fk-button fk-button-primary w-full"
-          data-testid="mobile-menu-join"
-          onClick={() => setMobileOpen(false)}
-        >
-          Join on Patreon →
-        </a>
+        {/* menu items… */}
       </MobileMenu>
     </header>
   );
