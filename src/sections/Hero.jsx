@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { SITE } from '@/config/site';
 import { useRevealTransition } from '@/lib/motion';
-import { Sparkles, ShieldCheck, Gem, Users } from 'lucide-react'; // Import icons
+import { Feather, ShieldCheck, Gem, UserCheck } from 'lucide-react'; // Import icons
 
 export default function Hero({ onOpenPreview }) {
   const reveal = useRevealTransition();
@@ -107,74 +107,36 @@ export default function Hero({ onOpenPreview }) {
                   {[
                     {
                       key: 'female',
-                      icon: (
-                        <Sparkles
-                          size={20}
-                          className="text-accent"
-                          aria-hidden="true"
-                        />
-                      ),
+                      icon: <Feather size={22} className="text-accent" aria-hidden="true" />,
                       title: 'Female‑focused',
                       desc: 'Tickling + feet, with room to evolve.',
                     },
                     {
                       key: 'age',
-                      icon: (
-                        <ShieldCheck
-                          size={20}
-                          className="text-accent"
-                          aria-hidden="true"
-                        />
-                      ),
+                      icon: <ShieldCheck size={22} className="text-accent" aria-hidden="true" />,
                       title: '18+',
                       desc: 'Adults only. Consent‑first content.',
                     },
                     {
                       key: 'patreon',
-                      icon: (
-                        <Gem
-                          size={20}
-                          className="text-accent"
-                          aria-hidden="true"
-                        />
-                      ),
+                      icon: <Gem size={22} className="text-accent" aria-hidden="true" />,
                       title: 'Patreon access',
                       desc: 'Membership and checkout handled there.',
                     },
                     {
                       key: 'discord',
-                      icon: (
-                        <Users
-                          size={20}
-                          className="text-accent"
-                          aria-hidden="true"
-                        />
-                      ),
+                      icon: <UserCheck size={22} className="text-accent" aria-hidden="true" />,
                       title: 'Discord roles',
                       desc: 'Roles by tier for supporters.',
                     },
                   ].map((feat) => (
-                    <div
-                      key={feat.key}
-                      className="flex gap-3 items-start"
-                      data-testid={`hero-feature-${feat.key}`}
-                    >
-                      <span className="mt-1" aria-hidden="true">
-                        {feat.icon}
-                      </span>
+                    <div key={feat.key} className="flex gap-3 items-start">
+                      <span className="mt-1" aria-hidden="true">{feat.icon}</span>
                       <div>
-                        <div
-                          className="font-semibold"
-                          style={{ color: 'var(--text-primary)' }}
-                          data-testid={`hero-feature-${feat.key}-title`}
-                        >
+                        <div className="font-semibold" style={{ color: 'var(--text-primary)' }}>
                           {feat.title}
                         </div>
-                        <div
-                          className="text-sm"
-                          style={{ color: 'var(--text-secondary)' }}
-                          data-testid={`hero-feature-${feat.key}-desc`}
-                        >
+                        <div className="text-sm" style={{ color: 'var(--text-secondary)' }}>
                           {feat.desc}
                         </div>
                       </div>

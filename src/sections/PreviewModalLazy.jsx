@@ -1,26 +1,27 @@
 import React from 'react';
 import { SITE } from '@/config/site';
 import Modal from '@/components/Modal';
+import ReactPlayer from 'react-player';
 
 export default function PreviewModalLazy({ isOpen, onClose }) {
   const embedUrl = SITE.previewEmbedUrl;
 
   return (
-    <Modal
-      isOpen={isOpen}
-      onClose={onClose}
-      title="Preview"
-      dataTestId="preview-modal"
-    >
+    <Modal isOpen={isOpen} onClose={onClose} title="Preview" dataTestId="preview-modal">
       <div data-testid="preview-modal-body">
         {embedUrl ? (
-          <div className="rounded-[14px] overflow-hidden" data-testid="preview-modal-embed">
-            <iframe
-              title="Preview video"
-              src={embedUrl}
-              className="w-full aspect-video"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
+          <div
+            className="rounded-[14px] overflow-hidden"
+            data-testid="preview-modal-embed"
+            style={{ maxHeight: '500px' }}  // Limite opcional de altura
+          >
+            <ReactPlayer
+              url={embedUrl}
+              controls
+              width="100%"
+              height="100%"
+              style={{ borderRadius: '14px', backgroundColor: 'black' }}
+              playing={false}
             />
           </div>
         ) : (
@@ -33,13 +34,17 @@ export default function PreviewModalLazy({ isOpen, onClose }) {
             }}
             data-testid="preview-modal-placeholder"
           >
-            <div className="fk-kicker" data-testid="preview-modal-placeholder-kicker">
-Preview
+            <div className="fk-kicker">Preview</div>
+            <div
+              className="mt-2 font-semibold"
+              style={{ color: 'var(--text-primary)' }}
+            >
+              This is a placeholder.
             </div>
-            <div className="mt-2 font-semibold" style={{ color: 'var(--text-primary)' }} data-testid="preview-modal-placeholder-title">
-This is a placeholder.
-            </div>
-            <p className="mt-2 text-sm" style={{ color: 'var(--text-secondary)' }} data-testid="preview-modal-placeholder-text">
+            <p
+              className="mt-2 text-sm"
+              style={{ color: 'var(--text-secondary)' }}
+            >
               No full scene is embedded here. If you want to add a real preview later, drop one URL into
               <span style={{ color: 'var(--text-primary)' }}> src/config/site.js</span>.
             </p>
@@ -51,12 +56,13 @@ This is a placeholder.
                 border: '1px solid var(--metal-soft)',
               }}
               aria-hidden="true"
-              data-testid="preview-modal-placeholder-art"
             />
           </div>
         )}
-
-        <div className="mt-4 text-xs" style={{ color: 'var(--text-muted)' }} data-testid="preview-modal-microcopy">
+        <div
+          className="mt-4 text-xs"
+          style={{ color: 'var(--text-muted)' }}
+        >
           Adults only. Full access is via Patreon membership.
         </div>
       </div>
