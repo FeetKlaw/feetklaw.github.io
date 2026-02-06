@@ -2,7 +2,7 @@
 <!--  Feet Klaw – Adult Fetish Community                   -->
 <!-- ===================================================== -->
 
-# 🦶 Feet Klaw  
+# Feet Klaw  
 ### *Private Adult Fetish Community · 18+ Only*
 
 ---
