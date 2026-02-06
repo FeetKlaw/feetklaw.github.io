@@ -1,172 +1,160 @@
-<!-- ===================================================== -->
-<!--  Feet Klaw – Adult Fetish Community                   -->
-<!-- ===================================================== -->
+<!--
+============================================================
+ Feet Klaw – Private Adult Fetish Community
+============================================================
+-->
 
-# Feet Klaw  
-### *Private Adult Fetish Community · 18+ Only*
-
----
-
-> **Feet Klaw** is a private adult fetish community focused on **feet and tickling**, built around **consent, intimacy, exclusivity, and controlled access**.  
->  
-> This website serves as the **official public gateway** to the community — presenting its identity, values, and membership structure, while redirecting all subscriptions and payments to **Patreon**.
+# 🦶 Feet Klaw
+### Private Adult Fetish Community · 18+ Only · All Rights Reserved
 
 ---
 
-## 🔞 Age Requirement & Content Warning
+> **Feet Klaw** is a private, adult-only fetish community centered on **feet and tickling**, with a strong emphasis on **consent, intimacy, discretion, and controlled access**.
+>
+> This website functions as the **official public-facing gateway** to the Feet Klaw ecosystem — presenting its identity, values, and membership structure, while directing all subscriptions and payments to **Patreon**.
 
-> ⚠️ **ADULT CONTENT — 18+ ONLY**
+---
 
-By accessing this website, repository, or any related materials, you confirm that:
+## 🔞 Mandatory Age Restriction
 
-- You are **at least 18 years old**
+> ⚠️ **ADULT CONTENT — ACCESS RESTRICTED TO 18+ ONLY**
+
+By accessing this website, repository, or any related materials, you explicitly confirm that:
+
+- You are **18 years of age or older**
 - You are legally permitted to view adult content in your jurisdiction
 - You understand this project contains **fetish-oriented adult themes**
+- You accept full responsibility for compliance with local laws
 
-**Minors are strictly prohibited.**
-
----
-
-## 🌐 About the Website
-
-The Feet Klaw website is designed as a **sensual, modern, and immersive experience**, balancing erotic aesthetics with clean UX and performance-oriented design.
-
-The site functions as:
-
-- A **vitrine / landing portal** for the community
-- A **membership showcase** (via Patreon)
-- A **hub** connecting social and community platforms
-
-### Core Design Principles
-
-- Privacy-first mindset
-- Mobile-first responsiveness
-- Dark & light visual themes
-- Subtle motion, never distracting
-- Performance-conscious media loading
+**Access by minors is strictly prohibited and constitutes unauthorized use.**
 
 ---
 
-## ✨ Features & Experience
+## 🌐 Website Purpose & Philosophy
 
-- 🔐 **Age Gate** before any content is shown  
+The Feet Klaw website is designed as a **high-end, immersive, privacy-conscious experience**, blending erotic aesthetics with modern web standards.
+
+The site serves as:
+
+- A **brand and identity showcase**
+- A **membership gateway** (via Patreon)
+- A **community access hub**
+- A **trust and transparency layer** for visitors
+
+### Design Principles
+
+- Privacy-first architecture  
+- Minimal data collection  
+- Mobile-first responsiveness  
+- Performance-focused media handling  
+- Subtle motion and interaction  
+- Clean, intentional visual hierarchy  
+
+---
+
+## ✨ Core Features
+
+- 🔐 **Age-Gate Enforcement**
 - 🌗 **Dark / Light Theme Toggle**
 - 📱 **Fully Responsive & Mobile-Optimized**
-- 📦 **Progressive Web App (PWA)** — installable on mobile devices
-- 🖼 **Lazy-loaded Galleries** for performance and discretion
-- 🎞 **Micro-interactions & Motion Animations**
-- 🧊 **Subtle 3D Card Effects** on interactive elements
+- 📦 **Progressive Web App (PWA)** support
+- 🖼 **Lazy-Loaded Galleries**
+- 🎞 **Micro-Interactions & Motion Animations**
+- 🧊 **Subtle 3D Hover Effects**
 - 📸 **Instagram Feed Integration**
-- 💬 **Discord Community Widget**
+- 💬 **Discord Community Integration**
 
 ---
 
-## 🧩 Website Sections
+## 🧩 Site Sections Overview
 
-### 🦶 Hero Section
-- Immediate identity and branding
+### 🦶 Hero
+- Brand identity and positioning
 - Adult disclaimer
-- Strong visual impact
-
----
+- Immediate visual impact
 
 ### 🖼 Gallery
-- Image-focused presentation
-- Lazy loading for optimal performance
-- Smooth transitions and hover effects
-
----
+- Performance-optimized media
+- Lazy loading for discretion
+- Smooth transitions
 
 ### 👥 Community
-- Embedded **Discord** widget
-- Live **Instagram** previews
-- Clear entry points to external platforms
+- Embedded Discord widget
+- Instagram previews
+- External platform access points
 
----
-
-### 💎 Membership Tiers
-
-All memberships are handled **externally via Patreon**.
+### 💎 Membership Tiers (via Patreon)
 
 | Tier | Description |
 |-----|------------|
-| **Standard** | Entry-level supporter tier |
-| **Deluxe** | Enhanced supporter access and perks |
+| **Standard** | Base supporter access |
+| **Deluxe** | Enhanced perks and visibility |
 | **Legacy** | Limited tier with permanent recognition |
 
-Each tier is displayed using:
+Each tier is displayed with:
 - Custom badges
 - Animated pricing cards
-- Visual hierarchy and emphasis
-
----
+- Clear visual differentiation
 
 ### ❓ FAQ
-- Membership questions
+- Membership clarification
 - Access rules
-- Age & consent clarification
-
----
+- Consent and age policies
 
 ### 🛟 Support
-- External support links
-- Community contact references
+- Contact pathways
+- Community assistance references
 
----
-
-### 📜 Legal Pages
+### 📜 Legal
 - Terms of Service
 - Privacy Policy
-- Explicit 18+ statements
+- Explicit 18+ compliance statements
 
 ---
 
-## 🎨 Visual & Interaction Details
+## 🎨 Interaction & UX Details
 
-- Motion-driven UI using subtle transitions
 - Scroll-based reveal animations
-- Hover depth & perspective effects
-- Touch-friendly interactions
+- Motion-driven section transitions
+- Hover depth and perspective effects
+- Touch-friendly mobile interactions
 - Clean typography and spacing discipline
 
 ---
 
 ## 🤝 Contributions
 
-Contributions are welcome **only from adults (18+)**.
+Contributions are accepted **only from adults (18+)**.
 
-By contributing, you acknowledge that:
-- This is an **adult-only project**
+By contributing, you agree that:
+- This is an **adult-oriented project**
 - All content must remain **consensual**
-- No part of this project may be reused elsewhere
-
-You may contribute via:
-- Issues
-- Pull Requests
-- Design or UX suggestions
+- No assets, concepts, or code may be reused elsewhere
+- No derivative or competing projects may be created
 
 ---
 
 ## 📬 Contact
 
 - 📧 **Email:** feetklaw@gmail.com  
-- 💬 **Discord:** Available through the community section of the website
+- 💬 **Discord:** Available via the website community section
 
 ---
 
 ## ⚠️ Legal Notice
 
 - All individuals depicted are **18 years of age or older**
-- All content is **fully consensual**
-- Redistribution, scraping, or reuse is **strictly forbidden**
-- Use by minors is **prohibited**
+- All content is **consensual**
+- Redistribution, scraping, AI usage, or reuse is **strictly prohibited**
+- Use by minors is forbidden
 
 ---
 
-## 📄 License
+## 📄 License & Legal Documents
 
-This project is protected by a **strict, all-rights-reserved license**.  
-See [`LICENSE`](./LICENSE) for full legal terms.
+- [`LICENSE`](./LICENSE) — Proprietary, All Rights Reserved  
+- [`TERMS`](./TERMS.md) — Terms of Service  
+- [`PRIVACY`](./PRIVACY.md) — Privacy Policy  
 
 ---
 
