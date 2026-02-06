@@ -1,140 +1,174 @@
-# Feet Klaw – Adult Fetish Community
+<!-- ===================================================== -->
+<!--  Feet Klaw – Adult Fetish Community                   -->
+<!-- ===================================================== -->
 
-> **18+ Only · Consensual · Private Community**
-
-**Feet Klaw** is an exclusive adult fetish community focused on **tickling and feet**, built around intimacy, consent, and controlled access.  
-The website acts as a **vitrine, hub, and gateway** for members, with subscriptions and payments managed externally via **Patreon**.
-
-This repository contains the public-facing website that introduces the community, its values, and its membership tiers.
+# 🦶 Feet Klaw  
+### *Private Adult Fetish Community · 18+ Only*
 
 ---
 
-## 🔞 Age Restriction
+> **Feet Klaw** is a private adult fetish community focused on **feet and tickling**, built around **consent, intimacy, exclusivity, and controlled access**.  
+>  
+> This website serves as the **official public gateway** to the community — presenting its identity, values, and membership structure, while redirecting all subscriptions and payments to **Patreon**.
 
-**This website and all related content are strictly for adults (18+).**  
-By accessing or contributing to this project, you confirm that you are legally allowed to view adult material in your jurisdiction.
+---
+
+## 🔞 Age Requirement & Content Warning
+
+> ⚠️ **ADULT CONTENT — 18+ ONLY**
+
+By accessing this website, repository, or any related materials, you confirm that:
+
+- You are **at least 18 years old**
+- You are legally permitted to view adult content in your jurisdiction
+- You understand this project contains **fetish-oriented adult themes**
+
+**Minors are strictly prohibited.**
 
 ---
 
 ## 🌐 About the Website
 
-The Feet Klaw website is designed as a **dark, immersive, mobile-first experience**, combining sensual aesthetics with modern UI interactions.
+The Feet Klaw website is designed as a **sensual, modern, and immersive experience**, balancing erotic aesthetics with clean UX and performance-oriented design.
 
-It includes:
+The site functions as:
 
-- An **age-gate** before access
-- A **responsive layout** optimized for mobile and desktop
-- **Dark / Light themes**
-- **Progressive Web App (PWA)** support (installable on mobile)
-- Embedded **Instagram feed**
-- Community interaction via **Discord**
-- Smooth micro-animations and subtle 3D effects
-- Lazy-loaded media for performance and discretion
+- A **vitrine / landing portal** for the community
+- A **membership showcase** (via Patreon)
+- A **hub** connecting social and community platforms
+
+### Core Design Principles
+
+- Privacy-first mindset
+- Mobile-first responsiveness
+- Dark & light visual themes
+- Subtle motion, never distracting
+- Performance-conscious media loading
 
 ---
 
-## 💎 Membership & Access
+## ✨ Features & Experience
 
-All memberships are handled via **Patreon**.
-
-### Available Tiers
-
-| Tier     | Description |
-|----------|------------|
-| **Standard** | Base supporter access, community visibility |
-| **Deluxe**   | Enhanced supporter perks and recognition |
-| **Legacy**   | Limited tier with permanent recognition |
-
-Each tier is visually represented on the site with **custom badges, pricing cards, and animated transitions**.
+- 🔐 **Age Gate** before any content is shown  
+- 🌗 **Dark / Light Theme Toggle**
+- 📱 **Fully Responsive & Mobile-Optimized**
+- 📦 **Progressive Web App (PWA)** — installable on mobile devices
+- 🖼 **Lazy-loaded Galleries** for performance and discretion
+- 🎞 **Micro-interactions & Motion Animations**
+- 🧊 **Subtle 3D Card Effects** on interactive elements
+- 📸 **Instagram Feed Integration**
+- 💬 **Discord Community Widget**
 
 ---
 
 ## 🧩 Website Sections
 
-### 🦶 Hero
-- First-impact presentation
-- Clear adult warning & identity
-- Strong visual branding
+### 🦶 Hero Section
+- Immediate identity and branding
+- Adult disclaimer
+- Strong visual impact
+
+---
 
 ### 🖼 Gallery
-- Lazy-loaded images
-- Performance-optimized
-- Designed for discretion and speed
+- Image-focused presentation
+- Lazy loading for optimal performance
+- Smooth transitions and hover effects
+
+---
 
 ### 👥 Community
-- Embedded **Discord widget**
-- Instagram feed preview
-- Entry points to private platforms
+- Embedded **Discord** widget
+- Live **Instagram** previews
+- Clear entry points to external platforms
 
-### 💳 Tiers
-- Patreon membership overview
-- Animated cards with subtle 3D hover effects
-- Tier badges and pricing
+---
+
+### 💎 Membership Tiers
+
+All memberships are handled **externally via Patreon**.
+
+| Tier | Description |
+|-----|------------|
+| **Standard** | Entry-level supporter tier |
+| **Deluxe** | Enhanced supporter access and perks |
+| **Legacy** | Limited tier with permanent recognition |
+
+Each tier is displayed using:
+- Custom badges
+- Animated pricing cards
+- Visual hierarchy and emphasis
+
+---
 
 ### ❓ FAQ
+- Membership questions
 - Access rules
-- Membership clarification
-- Age and consent policies
+- Age & consent clarification
+
+---
 
 ### 🛟 Support
 - External support links
-- Community contact options
+- Community contact references
 
-### 📜 Legal
+---
+
+### 📜 Legal Pages
 - Terms of Service
 - Privacy Policy
-- Explicit 18+ disclaimer
+- Explicit 18+ statements
 
 ---
 
-## ✨ Visual & Interaction Details
+## 🎨 Visual & Interaction Details
 
-- **Framer-motion animations**
-- Micro-transitions between sections
-- Hover depth and perspective effects
-- Smooth scroll behavior
-- Touch-friendly interactions on mobile
+- Motion-driven UI using subtle transitions
+- Scroll-based reveal animations
+- Hover depth & perspective effects
+- Touch-friendly interactions
+- Clean typography and spacing discipline
 
 ---
 
-## 🤝 Contribution
+## 🤝 Contributions
 
 Contributions are welcome **only from adults (18+)**.
 
 By contributing, you acknowledge that:
-- This is an **adult project**
+- This is an **adult-only project**
 - All content must remain **consensual**
-- No assets may be reused elsewhere
+- No part of this project may be reused elsewhere
 
-You may:
-- Open issues
-- Submit pull requests
-- Suggest UI/UX improvements
+You may contribute via:
+- Issues
+- Pull Requests
+- Design or UX suggestions
 
 ---
 
 ## 📬 Contact
 
-- **Email:** feetklaw@gmail.com  
-- **Discord:** Available via the website community section
+- 📧 **Email:** feetklaw@gmail.com  
+- 💬 **Discord:** Available through the community section of the website
 
 ---
 
 ## ⚠️ Legal Notice
 
-- All models and participants are **18 years or older**
-- All content is **consensual**
-- **Minors are strictly prohibited**
-- Unauthorized redistribution is forbidden
+- All individuals depicted are **18 years of age or older**
+- All content is **fully consensual**
+- Redistribution, scraping, or reuse is **strictly forbidden**
+- Use by minors is **prohibited**
 
 ---
 
 ## 📄 License
 
-This project uses a **restrictive, all-rights-reserved license**.  
-See the [`LICENSE`](./LICENSE) file for full legal terms.
+This project is protected by a **strict, all-rights-reserved license**.  
+See [`LICENSE`](./LICENSE) for full legal terms.
 
 ---
 
 **Feet Klaw**  
-_Private. Consensual. Adults only._
+*Private · Consensual · Adults Only*
