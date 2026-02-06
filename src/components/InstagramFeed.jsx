@@ -28,9 +28,9 @@ export default function InstagramFeed() {
         ></iframe>
       </div>
       <div className="mt-2 text-xs" style={{ color: 'var(--text-muted)' }}>
-        Don’t see anything? Substitua o URL acima pelo embed do seu SnapWidget ou
+        You can still see our latest updates by visiting our profile
         <a href="https://instagram.com/feetklawofficial" target="_blank" rel="noopener noreferrer">
-          siga-nos no Instagram
+          on Instagram
         </a>.
       </div>
     </div>
