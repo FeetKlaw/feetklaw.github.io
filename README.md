@@ -1,93 +1,140 @@
-# Feet Klaw (Static Site)
+# Feet Klaw – Adult Fetish Community
 
-Static site for **Feet Klaw**.
+> **18+ Only · Consensual · Private Community**
 
-## ✅ No backend, no secrets
-- Static Vite + React build
-- **No authentication**
-- **No API clients**
-- **No .env required**
-- Safe to publish (no secret keys included)
+**Feet Klaw** is an exclusive adult fetish community focused on **tickling and feet**, built around intimacy, consent, and controlled access.  
+The website acts as a **vitrine, hub, and gateway** for members, with subscriptions and payments managed externally via **Patreon**.
 
-## Tech
-- Vite + React
-- Tailwind CSS
-- Routing: **HashRouter** (GitHub Pages safe)
+This repository contains the public-facing website that introduces the community, its values, and its membership tiers.
 
-## Local development
-```bash
-yarn install
-yarn dev
-```
+---
 
-## Build
-```bash
-yarn build
-```
-Outputs a deployable `dist/`.
+## 🔞 Age Restriction
 
-### Build sanity check
-After building, confirm:
-- `dist/index.html` exists
-- assets load without absolute paths
-- routes work:
-  - `/#/about`
-  - `/#/community`
+**This website and all related content are strictly for adults (18+).**  
+By accessing or contributing to this project, you confirm that you are legally allowed to view adult material in your jurisdiction.
 
-## GitHub Pages deployment
-Recommended setup (GitHub Actions or manual):
-1. Run `yarn build`
-2. Publish `dist/` to GitHub Pages
+---
 
-### Routing hardening
-This repo uses **HashRouter**, so deep links like `/#/about` won’t break on GitHub Pages.
+## 🌐 About the Website
 
-Additionally, `public/404.html` is included as a belt-and-suspenders fallback.
+The Feet Klaw website is designed as a **dark, immersive, mobile-first experience**, combining sensual aesthetics with modern UI interactions.
 
-## Vite base URL (custom domain vs subpath)
-By default, `vite.config.js` uses:
-```js
-base: '/'
-```
-This is correct for a **custom domain** (e.g. `https://www.feetklaw.com`).
+It includes:
 
-If you deploy under a subpath (e.g. `https://username.github.io/repo/`), change to:
-```js
-base: '/repo/'
-```
+- An **age-gate** before access
+- A **responsive layout** optimized for mobile and desktop
+- **Dark / Light themes**
+- **Progressive Web App (PWA)** support (installable on mobile)
+- Embedded **Instagram feed**
+- Community interaction via **Discord**
+- Smooth micro-animations and subtle 3D effects
+- Lazy-loaded media for performance and discretion
 
-## Security / CSP guidance (recommended headers)
-GitHub Pages can’t always enforce headers, but for a custom domain you should consider:
-- `Content-Security-Policy` (CSP)
-- `X-Content-Type-Options: nosniff`
-- `Referrer-Policy: strict-origin-when-cross-origin`
-- `Permissions-Policy` (disable unused features)
+---
 
-Example CSP starting point (adjust as needed for Google Fonts):
-```
-Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; frame-src 'self' https:;
-```
+## 💎 Membership & Access
 
-## Notes
-- Preview video embed is configured in **one place**: `src/config/site.js` (`previewEmbedUrl`).
-- Theme defaults to **dark**, and preference is stored in localStorage (with privacy-mode safe guards).
+All memberships are handled via **Patreon**.
 
-## Production deploy (GitHub Pages)
+### Available Tiers
 
-This repo includes a GitHub Actions workflow that builds the site and publishes **dist/** to GitHub Pages on every push to **main**.
+| Tier     | Description |
+|----------|------------|
+| **Standard** | Base supporter access, community visibility |
+| **Deluxe**   | Enhanced supporter perks and recognition |
+| **Legacy**   | Limited tier with permanent recognition |
 
-### One-time GitHub setup
-1. Go to **Settings → Pages**
-2. Under **Build and deployment → Source**, select **GitHub Actions**
-3. Push to **main** (or run the workflow manually) and wait for the **Deploy to GitHub Pages** workflow to finish.
+Each tier is visually represented on the site with **custom badges, pricing cards, and animated transitions**.
 
-### Custom domain
-- Add your domain in **Settings → Pages → Custom domain**
-- Put **CNAME** for `www` to `feetklaw.github.io`
-- Put the 4 **A** records for the apex (`feetklaw.com`) to the GitHub Pages IPs:
-  - 185.199.108.153
-  - 185.199.109.153
-  - 185.199.110.153
-  - 185.199.111.153
+---
 
-> Note: GitHub Pages serves the built output from **dist/**. The repo root contains source code and is not meant to be served directly.
+## 🧩 Website Sections
+
+### 🦶 Hero
+- First-impact presentation
+- Clear adult warning & identity
+- Strong visual branding
+
+### 🖼 Gallery
+- Lazy-loaded images
+- Performance-optimized
+- Designed for discretion and speed
+
+### 👥 Community
+- Embedded **Discord widget**
+- Instagram feed preview
+- Entry points to private platforms
+
+### 💳 Tiers
+- Patreon membership overview
+- Animated cards with subtle 3D hover effects
+- Tier badges and pricing
+
+### ❓ FAQ
+- Access rules
+- Membership clarification
+- Age and consent policies
+
+### 🛟 Support
+- External support links
+- Community contact options
+
+### 📜 Legal
+- Terms of Service
+- Privacy Policy
+- Explicit 18+ disclaimer
+
+---
+
+## ✨ Visual & Interaction Details
+
+- **Framer-motion animations**
+- Micro-transitions between sections
+- Hover depth and perspective effects
+- Smooth scroll behavior
+- Touch-friendly interactions on mobile
+
+---
+
+## 🤝 Contribution
+
+Contributions are welcome **only from adults (18+)**.
+
+By contributing, you acknowledge that:
+- This is an **adult project**
+- All content must remain **consensual**
+- No assets may be reused elsewhere
+
+You may:
+- Open issues
+- Submit pull requests
+- Suggest UI/UX improvements
+
+---
+
+## 📬 Contact
+
+- **Email:** feetklaw@gmail.com  
+- **Discord:** Available via the website community section
+
+---
+
+## ⚠️ Legal Notice
+
+- All models and participants are **18 years or older**
+- All content is **consensual**
+- **Minors are strictly prohibited**
+- Unauthorized redistribution is forbidden
+
+---
+
+## 📄 License
+
+This project uses a **restrictive, all-rights-reserved license**.  
+See the [`LICENSE`](./LICENSE) file for full legal terms.
+
+---
+
+**Feet Klaw**  
+_Private. Consensual. Adults only._
