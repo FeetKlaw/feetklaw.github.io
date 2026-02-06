@@ -4,7 +4,7 @@
 ============================================================
 -->
 
-# 🦶 Feet Klaw
+# Feet Klaw
 ### Private Adult Fetish Community · 18+ Only · All Rights Reserved
 
 ---
