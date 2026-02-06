@@ -123,7 +123,7 @@ export default function Tiers() {
                     </div>
                   </div>
 
-                  {/* Ajuste de margem superior no preço para evitar sobreposição */}
+                  {/* Adjust the upper margin on the price to avoid overlap */}
                   <div
                     className="text-right shrink-0 mt-4"
                     style={{ minWidth: 120 }}
