@@ -2,8 +2,9 @@ name: Deploy Vite to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
 
+# Allow the workflow to write to the gh-pages branch
 permissions:
   contents: write
 
@@ -12,10 +13,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
+      # Set up Node.js 20
       - uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 20
 
+      # Install dependencies (preferring Yarn if yarn.lock exists)
       - name: Install dependencies
         run: |
           if [ -f yarn.lock ]; then
@@ -25,6 +29,7 @@ jobs:
             npm ci
           fi
 
+      # Build the Vite project
       - name: Build
         run: |
           if [ -f yarn.lock ]; then
@@ -33,6 +38,7 @@ jobs:
             npm run build
           fi
 
+      # Deploy the dist folder to gh-pages branch
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
