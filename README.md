@@ -160,3 +160,9 @@ By contributing, you agree that:
 
 **Feet Klaw**  
 *Private · Consensual · Adults Only*
+
+## Development and publication
+
+Use Node.js 20 and npm. Install dependencies with `npm ci`, run the local site with `npm run dev`, and generate the production files with `npm run build`.
+
+The GitHub Pages workflow in `.github/workflows/static.yml` builds the site and publishes `dist`. The repository's `CNAME` is included in the publication to preserve the custom domain. The public introduction video is stored in `public`; its player source is configured in `src/config/site.js`.

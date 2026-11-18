@@ -22,7 +22,6 @@ export default function DiscordWidget() {
           src="https://discord.com/widget?id=993035852173279242&theme=dark"
           width="100%"
           height="380"
-          allowTransparency="true"
           frameBorder="0"
           sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
         ></iframe>

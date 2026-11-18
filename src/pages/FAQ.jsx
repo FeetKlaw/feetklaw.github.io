@@ -37,6 +37,7 @@ function FaqItem({ item }) {
         type="button"
         className="w-full flex justify-between items-center text-left"
         onClick={() => setOpen((prev) => !prev)}
+        aria-expanded={open}
       >
         <span className="font-semibold" style={{ color: 'var(--text-primary)' }}>{item.q}</span>
         <span style={{ color: 'var(--text-secondary)' }}>{open ? '–' : '+'}</span>

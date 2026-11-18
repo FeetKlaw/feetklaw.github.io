@@ -106,6 +106,7 @@ export default function Modal({
         tabIndex={-1}
         ref={dialogRef}
         className="w-full max-w-3xl fk-card p-5 md:p-6"
+        style={{ maxHeight: 'calc(100dvh - 3rem)', overflowY: 'auto' }}
         data-testid={dataTestId}
       >
         <div className="flex items-start justify-between gap-4">

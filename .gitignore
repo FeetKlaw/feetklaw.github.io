@@ -1,4 +1,5 @@
 dist/
 node_modules/
 public/preview.mp4
-yarn.lock
+.npm-cache/
+*.log

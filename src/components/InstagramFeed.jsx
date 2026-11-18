@@ -24,7 +24,6 @@ export default function InstagramFeed() {
           height="380"
           frameBorder="0"
           scrolling="no"
-          allowTransparency="true"
         ></iframe>
       </div>
       <div className="mt-2 text-xs" style={{ color: 'var(--text-muted)' }}>

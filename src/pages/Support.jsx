@@ -58,11 +58,11 @@ export default function Support() {
                 </h2>
                 <p className="mt-2 text-sm" style={{ color: 'var(--text-secondary)' }}>
                   Have a quick question? Our
-                  <a href="/faq" style={{ color: 'var(--accent-primary)' }}> FAQ</a>
+                  <a href="#/faq" style={{ color: 'var(--accent-primary)' }}> FAQ</a>
                   answers the most common queries about Feet Klaw, memberships, content and more.
                 </p>
                 <a
-                  href="/faq"
+                  href="#/faq"
                   className="fk-button mt-4"
                   data-testid="support-faq-button"
                 >

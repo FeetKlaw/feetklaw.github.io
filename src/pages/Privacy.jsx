@@ -17,7 +17,7 @@ export default function Privacy() {
               Privacy Policy
             </h1>
             <p className="mt-2 text-sm" style={{ color: 'var(--text-muted)' }}>
-              Last updated: February&nbsp;4,&nbsp;2026
+              Last updated: November&nbsp;18,&nbsp;2026
             </p>
 
             <h2 className="mt-5 text-xl font-semibold">1. Information We Collect</h2>
@@ -37,7 +37,7 @@ export default function Privacy() {
             </p>
             <p className="mt-2 max-w-3xl leading-relaxed fk-text-secondary">
               <strong>Local Storage:</strong> We store a small amount of data in your browser’s local storage to
-              remember your theme preference and to verify that you are over 18. This data remains on your device
+              remember your theme and player preferences and your self-declared age confirmation. This data remains on your device
               and is not transmitted to our servers.
             </p>
 
@@ -59,7 +59,7 @@ export default function Privacy() {
             <h2 className="mt-6 text-xl font-semibold">4. Cookies and Tracking Technologies</h2>
             <p className="mt-2 max-w-3xl leading-relaxed fk-text-secondary">
               We use minimal tracking. The only storage mechanisms we use are local storage to remember your
-              theme preference and age confirmation. You may disable local storage via your browser settings, but
+              theme and player preferences and age confirmation. You may disable local storage via your browser settings, but
               some functionalities (such as remembering your theme or age confirmation) may not work.
             </p>
 

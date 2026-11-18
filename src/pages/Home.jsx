@@ -1,6 +1,5 @@
 import React, {
   Suspense,
-  useEffect,
   useMemo,
   useState,
 } from 'react';
@@ -34,9 +33,6 @@ export default function Home({ theme }) {
     return false;
   });
 
-  // Controla abertura forçada do AgeGate após timeout
-  const [forceAgeGateOpen, setForceAgeGateOpen] = useState(false);
-
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
   const openPreview = () => setIsPreviewOpen(true);
   const closePreview = () => setIsPreviewOpen(false);
@@ -46,23 +42,16 @@ export default function Home({ theme }) {
     safeLocalStorageSet('fk_verified', 'true');
     safeLocalStorageSet('fk_verified_ts', String(Date.now()));
     setIsVerified(true);
-    setForceAgeGateOpen(false);
   };
-
-  // Se não verificado, inicia timer de 15 s para forçar AgeGate
-  useEffect(() => {
-    if (!isVerified) {
-      const timer = setTimeout(() => {
-        setForceAgeGateOpen(true);
-      }, 15000);
-      return () => clearTimeout(timer);
-    }
-  }, [isVerified]);
 
   const backgroundClass = useMemo(() => {
     // Tema claro suportado; escuro é padrão
     return theme === 'light' ? '' : 'fk-bg';
   }, [theme]);
+
+  if (!isVerified) {
+    return <main className="min-h-screen fk-bg" data-testid="home-page"><AgeGate isOpen onAccept={acceptAgeGate} /></main>;
+  }
 
   return (
     <main
@@ -80,20 +69,7 @@ export default function Home({ theme }) {
 
       <ScrollProgress />
 
-      {/* AgeGate abre se ainda não verificado ou se timer disparar */}
-      <AgeGate
-        isOpen={!isVerified || forceAgeGateOpen}
-        onAccept={acceptAgeGate}
-      />
-
-      {/* Blur temporário da página até confirmar idade */}
-      <div
-        className={
-          isVerified
-            ? ''
-            : 'pointer-events-none select-none blur-[2px] opacity-60'
-        }
-      >
+      <div>
         <Hero onOpenPreview={openPreview} />
 
         <Suspense

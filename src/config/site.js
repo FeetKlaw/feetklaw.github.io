@@ -17,8 +17,8 @@ export const SITE = {
   patreonCta: 'Join on Patreon',
   previewCta: 'Watch Preview',
 
-  // Preview embed (optional). Leave empty to show the tasteful placeholder.
-  previewEmbedUrl: 'https://1drv.ms/v/c/379ce595ee8e8808/IQQPfYqYC-NoQbk0wevWbcywASXqSBT4O8wu9BOAlxLrcAE',
+  // Public introduction preview.
+  previewVideoUrl: '/Feet%20Klaw%20Introduction-highlight.mp4',
 
   // Access dropdown label
   accessMenuLabel: "What You'll Find",

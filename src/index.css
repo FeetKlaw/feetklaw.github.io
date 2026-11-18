@@ -1,5 +1,43 @@
 @import "./styles/tokens.css";
 
+.fk-video-player { overflow: hidden; border: 1px solid rgba(200,164,93,.28); border-radius: 16px; background: #080808; color: #f7f5f0; box-shadow: 0 14px 50px rgba(0,0,0,.32); }
+.fk-video-player:focus-visible { outline: 2px solid #c8a45d; outline-offset: 3px; }
+.fk-video-screen { position: relative; width: 100%; aspect-ratio: 16 / 9; background: #000; }
+.fk-video-screen video { display: block; width: 100%; height: 100%; object-fit: contain; cursor: pointer; }
+.fk-video-label { position: absolute; top: 12px; left: 12px; padding: 6px 9px; border-radius: 6px; background: rgba(0,0,0,.65); color: #e9d5ad; font-size: 9px; letter-spacing: .18em; pointer-events: none; }
+.fk-video-play, .fk-video-loading { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); display: grid; place-items: center; width: 70px; height: 70px; border-radius: 50%; color: #fff; background: rgba(125,26,16,.92); border: 1px solid rgba(200,164,93,.7); box-shadow: 0 8px 35px rgba(0,0,0,.5); }
+.fk-video-loading { pointer-events: none; }
+.fk-video-error { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: 20px; text-align: center; background: rgba(0,0,0,.9); font-size: 14px; }
+.fk-video-toolbar { padding: 12px 14px 10px; background: linear-gradient(180deg,#171412,#090909); }
+.fk-video-seek { appearance: none; display: block; width: 100%; height: 5px; border-radius: 4px; cursor: pointer; margin: 5px 0 14px; }
+.fk-video-seek::-webkit-slider-thumb { appearance: none; width: 13px; height: 13px; border-radius: 50%; background: #f4d99e; border: 2px solid #fff1d4; }
+.fk-video-seek::-moz-range-thumb { width: 10px; height: 10px; border-radius: 50%; background: #f4d99e; border: 2px solid #fff1d4; }
+.fk-video-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 4px; }
+.fk-video-control { position: relative; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; width: 36px; height: 36px; border-radius: 9px; color: #f3ede4; border: 1px solid transparent; background: transparent; cursor: pointer; }
+.fk-video-control:hover, .fk-video-rate:hover { background: rgba(200,164,93,.14); border-color: rgba(200,164,93,.24); }
+.fk-video-player button:focus-visible, .fk-video-player input:focus-visible, .fk-video-player select:focus-visible { outline: 2px solid #e6bd70; outline-offset: 3px; }
+.fk-video-control:disabled { opacity: .35; cursor: default; }
+.fk-video-small { position: absolute; bottom: 3px; right: 3px; font-size: 8px; }
+.fk-video-time { font-size: 11px; font-variant-numeric: tabular-nums; white-space: nowrap; padding: 0 7px; }
+.fk-video-time span { color: #b1a99e; }
+.fk-video-volume { display: flex; align-items: center; gap: 3px; }
+.fk-video-volume input { width: 58px; accent-color: #c8a45d; cursor: pointer; }
+.fk-video-spacer { flex: 1; }
+.fk-video-rate { font: inherit; font-size: 12px; color: #f3ede4; background: #1b1712; border: 1px solid rgba(200,164,93,.2); border-radius: 8px; padding: 7px 3px; cursor: pointer; }
+.fk-video-rate option { background: #171412; color: #fff; }
+.fk-video-hints { margin-top: 7px; font-size: 10px; color: #b1a99e; letter-spacing: .02em; }
+.fk-video-notice { margin: 7px 0 0; font-size: 12px; color: #e6bd70; }
+.fk-video-player:fullscreen { display: flex; flex-direction: column; width: 100%; height: 100%; border: 0; border-radius: 0; }
+.fk-video-player:fullscreen .fk-video-screen { flex: 1; min-height: 0; aspect-ratio: auto; }
+.fk-video-player:fullscreen .fk-video-toolbar { flex-shrink: 0; }
+.fk-age-progress { height: 4px; border-radius: 4px; background: var(--surface-3); overflow: hidden; margin: 12px 0 18px; }
+.fk-age-progress > div { height: 100%; border-radius: inherit; background: linear-gradient(90deg,#a71f13,#c8a45d); transition: width 220ms ease; }
+.fk-age-confirmation { display: flex; align-items: flex-start; gap: 12px; font-size: 13px; line-height: 1.6; cursor: pointer; color: var(--text-secondary); }
+.fk-age-confirmation input { width: 18px; height: 18px; margin-top: 2px; flex-shrink: 0; accent-color: #a71f13; }
+[data-testid="age-gate-enter-button"]:disabled { opacity: .4; cursor: not-allowed; }
+@media (max-width: 600px) { .fk-video-volume input, .fk-video-hints { display: none; } .fk-video-toolbar { padding: 10px 8px; } .fk-video-actions { gap: 1px; } .fk-video-control { width: 32px; height: 36px; } .fk-video-time { padding: 0 3px; font-size: 10px; } .fk-video-rate { font-size: 11px; padding: 7px 1px; } .fk-video-play { width: 56px; height: 56px; } }
+@media (prefers-reduced-motion: reduce) { .fk-age-progress > div { transition: none; } }
+
 /* Disable unknown at-rule warnings from Stylelint for Tailwind directives */
  /* stylelint-disable at-rule-no-unknown */
 @tailwind base;
