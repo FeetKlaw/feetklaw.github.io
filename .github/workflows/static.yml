@@ -9,6 +9,10 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+  # Refresh the Instagram snapshot daily.
+  schedule:
+    - cron: '17 9 * * *'
+
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
@@ -38,6 +42,12 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci
+      - name: Check Instagram sync
+        run: node --test scripts/sync-instagram.test.mjs
+      - name: Sync Instagram posts
+        run: node scripts/sync-instagram.mjs
+        env:
+          INSTAGRAM_FEED_URL: ${{ vars.INSTAGRAM_FEED_URL }}
       - name: Build
         run: npm run build
       - name: Preserve custom domain

@@ -3,3 +3,4 @@ node_modules/
 public/preview.mp4
 .npm-cache/
 *.log
+public/instagram/

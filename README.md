@@ -166,3 +166,5 @@ By contributing, you agree that:
 Use Node.js 20 and npm. Install dependencies with `npm ci`, run the local site with `npm run dev`, and generate the production files with `npm run build`.
 
 The GitHub Pages workflow in `.github/workflows/static.yml` builds the site and publishes `dist`. The repository's `CNAME` is included in the publication to preserve the custom domain. The public introduction video is stored in `public`; its player source is configured in `src/config/site.js`.
+
+Instagram highlights use the connected account's public Behold JSON feed. Set the repository variable `INSTAGRAM_FEED_URL` to that feed's URL. The publication workflow copies up to six posts and their media into the site daily. Generated files in `public/instagram` are excluded from version control. If a refresh fails, the workflow preserves the previously published snapshot when available. Visitors load the copies hosted by Feet Klaw; Instagram access tokens are managed by the connected service and are not stored in this repository.
