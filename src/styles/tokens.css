@@ -61,6 +61,7 @@ html[data-theme='dark'] {
   --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.42);
 
   --ring: rgba(200, 164, 93, 0.75);
+  --link-inline: #f08b7b;
 }
 
 /* Dim */
@@ -110,6 +111,7 @@ html[data-theme='light'] {
   --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.08);
 
   --ring: rgba(167, 31, 19, 0.55);
+  --link-inline: #a72d20;
   /* keep gold subtle; lean warmer in light */
   --metal: rgba(167, 31, 19, 0.65);
   --metal-soft: rgba(167, 31, 19, 0.16);

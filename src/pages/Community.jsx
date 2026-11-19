@@ -4,6 +4,7 @@ import { SITE } from '@/config/site';
 import { useRevealTransition } from '@/lib/motion';
 import DiscordWidget from '@/components/DiscordWidget';
 import InstagramFeed from '@/components/InstagramFeed';
+import SkipLink from '@/components/SkipLink';
 
 const ITEMS = [
   { name: 'Discord', href: SITE.links.discord,   desc: 'Roles by tier, updates, and community chat.' },
@@ -20,9 +21,7 @@ export default function Community() {
 
   return (
     <main className="min-h-screen fk-bg" data-testid="community-page">
-      <a href="#community-content" className="fk-skip-link" data-testid="skip-to-content-link-community">
-        Skip to content
-      </a>
+      <SkipLink targetId="community-content" testId="skip-to-content-link-community" />
       <section className="pt-14 md:pt-20" data-testid="community-hero-section">
         <div className="fk-container" id="community-content">
           <motion.div {...reveal} className="fk-card p-7 md:p-10">

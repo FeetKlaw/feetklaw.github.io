@@ -1,15 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useRevealTransition } from '@/lib/motion';
+import SkipLink from '@/components/SkipLink';
 
 export default function About() {
   const reveal = useRevealTransition();
 
   return (
     <main className="min-h-screen fk-bg" data-testid="about-page">
-      <a href="#about-content" className="fk-skip-link" data-testid="skip-to-content-link-about">
-        Skip to content
-      </a>
+      <SkipLink targetId="about-content" testId="skip-to-content-link-about" />
 
       <section className="pt-14 md:pt-20" data-testid="about-hero-section">
         <div className="fk-container" id="about-content">

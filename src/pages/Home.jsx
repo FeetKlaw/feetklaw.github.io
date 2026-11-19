@@ -4,6 +4,7 @@ import React, {
   useState,
 } from 'react';
 import AgeGate from '@/components/AgeGate';
+import SkipLink from '@/components/SkipLink';
 import ScrollProgress from '@/components/ScrollProgress';
 import StickyJoinButton from '@/components/StickyJoinButton';
 import Hero from '@/sections/Hero';
@@ -59,13 +60,7 @@ export default function Home({ theme }) {
       id="main-content"
       data-testid="home-page"
     >
-      <a
-        href="#main-content"
-        className="fk-skip-link"
-        data-testid="skip-to-content-link-home"
-      >
-        Skip to content
-      </a>
+      <SkipLink targetId="main-content" testId="skip-to-content-link-home" />
 
       <ScrollProgress />
 

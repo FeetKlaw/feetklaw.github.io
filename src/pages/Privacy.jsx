@@ -1,11 +1,10 @@
 import React from 'react';
+import SkipLink from '@/components/SkipLink';
 
 export default function Privacy() {
   return (
     <main className="min-h-screen fk-bg" data-testid="privacy-page">
-      <a href="#privacy-content" className="fk-skip-link" data-testid="skip-to-content-link-privacy">
-        Skip to content
-      </a>
+      <SkipLink targetId="privacy-content" testId="skip-to-content-link-privacy" />
 
       <section className="pt-14 md:pt-20 pb-16" data-testid="privacy-section">
         <div className="fk-container" id="privacy-content">

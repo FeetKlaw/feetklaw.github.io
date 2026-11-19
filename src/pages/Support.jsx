@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useRevealTransition } from '@/lib/motion';
+import SkipLink from '@/components/SkipLink';
 
 /**
  * Support page: explica como obter ajuda (email e Discord) e oferece link para FAQ.
@@ -9,9 +10,7 @@ export default function Support() {
   const reveal = useRevealTransition();
   return (
     <main className="min-h-screen fk-bg" data-testid="support-page">
-      <a href="#support-content" className="fk-skip-link" data-testid="skip-to-content-link-support">
-        Skip to content
-      </a>
+      <SkipLink targetId="support-content" testId="skip-to-content-link-support" />
       <section className="pt-14 md:pt-20" data-testid="support-section">
         <div className="fk-container" id="support-content">
           <motion.div {...reveal} className="fk-card p-7 md:p-10">
@@ -28,8 +27,8 @@ export default function Support() {
                   Email Support
                 </h2>
                 <p className="mt-2 text-sm" style={{ color: 'var(--text-secondary)' }}>
-                  For billing questions, technical issues or feedback, send us an email at 
-                  <a href="mailto:feetklaw@gmail.com" style={{ color: 'var(--accent-primary)' }}>
+                  For billing questions, technical issues or feedback, send us an email at{' '}
+                  <a href="mailto:feetklaw@gmail.com" className="fk-inline-link">
                     feetklaw@gmail.com
                   </a>. We aim to respond within 24–48 hours.
                 </p>
@@ -57,8 +56,8 @@ export default function Support() {
                   FAQ
                 </h2>
                 <p className="mt-2 text-sm" style={{ color: 'var(--text-secondary)' }}>
-                  Have a quick question? Our
-                  <a href="#/faq" style={{ color: 'var(--accent-primary)' }}> FAQ</a>
+                  Have a quick question? Our{' '}
+                  <a href="#/faq" className="fk-inline-link">FAQ</a>{' '}
                   answers the most common queries about Feet Klaw, memberships, content and more.
                 </p>
                 <a

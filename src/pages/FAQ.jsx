@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useRevealTransition } from '@/lib/motion';
+import SkipLink from '@/components/SkipLink';
 
 /**
  * FAQ page listing common questions about Feet Klaw. Questions
@@ -55,9 +56,7 @@ export default function FAQ() {
   const reveal = useRevealTransition();
   return (
     <main className="min-h-screen fk-bg" data-testid="faq-page">
-      <a href="#faq-content" className="fk-skip-link" data-testid="skip-to-content-link-faq">
-        Skip to content
-      </a>
+      <SkipLink targetId="faq-content" testId="skip-to-content-link-faq" />
       <section className="pt-14 md:pt-20" data-testid="faq-hero-section">
         <div className="fk-container" id="faq-content">
           <motion.div {...reveal} className="fk-card p-7 md:p-10">

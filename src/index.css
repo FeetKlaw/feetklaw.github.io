@@ -1,5 +1,10 @@
 @import "./styles/tokens.css";
 
+.fk-inline-link { color: var(--link-inline); text-decoration: underline; text-underline-offset: .18em; text-decoration-thickness: 1px; overflow-wrap: anywhere; }
+.fk-inline-link:hover { color: var(--text-primary); }
+.fk-inline-link:focus-visible { outline: 2px solid var(--ring); outline-offset: 3px; border-radius: 2px; }
+#main-content, #about-content, #community-content, #faq-content, #support-content, #terms-content, #privacy-content { scroll-margin-top: 100px; }
+
 .fk-instagram { min-width: 0; }
 .fk-instagram-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .fk-instagram-handle { display: inline-flex; align-items: center; gap: 6px; color: var(--metal); font-size: 12px; margin-top: 9px; text-decoration: none; }

@@ -1,11 +1,10 @@
 import React from 'react';
+import SkipLink from '@/components/SkipLink';
 
 export default function Terms() {
   return (
     <main className="min-h-screen fk-bg" data-testid="terms-page">
-      <a href="#terms-content" className="fk-skip-link" data-testid="skip-to-content-link-terms">
-        Skip to content
-      </a>
+      <SkipLink targetId="terms-content" testId="skip-to-content-link-terms" />
 
       <section className="pt-14 md:pt-20 pb-16" data-testid="terms-section">
         <div className="fk-container" id="terms-content">
